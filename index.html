@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>말랑pick</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -11,10 +11,10 @@ body{font-family:"Noto Sans KR",sans-serif;background:#fff5f8;color:#2d1a22}
 
 /* NAV */
 nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:300;height:54px}
-.logo{font-size:17px;font-weight:700;color:#4b1528;cursor:pointer}
+.logo{font-size:17px;font-weight:700;color:#4b1528;cursor:pointer;}
 .logo em{color:#d4537e;font-style:normal}
-.nav-menu{display:flex}
-.nav-tab{padding:0 15px;height:54px;display:flex;align-items:center;font-size:13px;font-weight:500;color:#993556;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;font-family:inherit;transition:all .2s;white-space:nowrap}
+.nav-menu{display:flex;overflow-x:auto;scrollbar-width:none}.nav-menu::-webkit-scrollbar{display:none}
+.nav-tab{padding:0 15px;height:54px;display:flex;align-items:center;font-size:13px;font-weight:500;color:#72243e;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;font-family:inherit;transition:all .2s;white-space:nowrap}
 .nav-tab:hover{color:#d4537e}
 .nav-tab.on{color:#d4537e;font-weight:700;border-bottom-color:#d4537e}
 
@@ -24,12 +24,12 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 @keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#fbeaf0,#fce8f3);border-bottom:1px solid #f4c0d1;padding:36px 28px 28px;text-align:center}
+.hero{background:linear-gradient(135deg,#fbeaf0,#fce8f3);border-bottom:1px solid #f4c0d1;padding:40px 28px 32px;text-align:center}
 .hero-eye{font-size:11px;font-weight:700;color:#d4537e;letter-spacing:.1em;margin-bottom:10px}
-.hero-title{font-size:27px;font-weight:700;color:#4b1528;line-height:1.3;margin-bottom:8px}
+.hero-title{font-size:28px;font-weight:700;color:#4b1528;line-height:1.3;margin-bottom:8px;}
 .hero-title em{color:#d4537e;font-style:normal}
-.hero-sub{font-size:13px;color:#993556;line-height:1.7;margin-bottom:14px}
-.notice-box{display:inline-block;background:#fff;border:1px solid #f4c0d1;border-radius:12px;padding:11px 18px;font-size:11px;color:#72243e;line-height:1.8;text-align:left;max-width:560px}
+.hero-sub{font-size:13px;color:#993556;line-height:1.8;margin-bottom:16px}
+.notice-box{display:inline-block;background:#fbeaf0;border:1px solid #ebebeb;border-radius:12px;padding:11px 18px;font-size:11px;color:#72243e;line-height:1.8;text-align:left;max-width:560px}
 .notice-box strong{color:#d4537e}
 
 /* WRAP */
@@ -37,17 +37,70 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 
 /* CONTROLS */
 .top-controls{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
-.search-box input{border:1.5px solid #ed93b1;border-radius:24px;padding:9px 16px;font-size:13px;font-family:inherit;outline:none;background:#fff;color:#4b1528;width:220px;transition:border-color .2s}
+.search-box input{border:1.5px solid #f4c0d1;border-radius:24px;padding:9px 16px;font-size:13px;font-family:inherit;outline:none;background:#fff;color:#4b1528;width:220px;transition:border-color .2s}
 .search-box input:focus{border-color:#d4537e}
-.search-box input::placeholder{color:#ed93b1}
+.search-box input::placeholder{color:#b4a2ac}
 .cat-row{display:flex;gap:7px;flex-wrap:wrap}
-.cat-btn{border:1.5px solid #f4c0d1;border-radius:24px;padding:6px 14px;font-size:12px;font-weight:500;background:#fff;color:#993556;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}
+.cat-btn{border:1.5px solid #f4c0d1;border-radius:24px;padding:6px 14px;font-size:12px;font-weight:500;background:#fff;color:#993556;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap;min-height:34px}
 .cat-btn.on,.cat-btn:hover{background:#fbeaf0;border-color:#d4537e;color:#d4537e;font-weight:700}
 
 /* GRID */
 .prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
 @media(max-width:900px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:540px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ── 모바일 최적화 ── */
+@media(max-width:600px){
+  nav{padding:0 14px;height:50px}
+  .logo{font-size:16px}
+  .nav-tab{padding:0 10px;font-size:12px;height:50px}
+  #seller-badge{top:8px;right:4px}
+
+  .hero{padding:28px 16px 22px}
+  .hero-title{font-size:22px}
+  .hero-sub{font-size:12px}
+  .notice-box{font-size:10px;padding:9px 13px}
+
+  .wrap{padding:18px 14px}
+  .top-controls{gap:8px}
+  .search-box input{width:100%;font-size:12px;padding:8px 14px}
+  .cat-row{gap:5px}
+  .cat-btn{font-size:11px;padding:5px 11px}
+
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .pcard-body{padding:8px 9px 10px}
+  .pcard-name{font-size:11px}
+  .pcard-price-main{font-size:12px}
+  .pcard-emoji{font-size:36px}
+
+  .seller-page{padding:16px 14px}
+  .sfilter-row{gap:6px}
+  .sfilter-btn{font-size:11px;padding:6px 12px}
+  .seller-hd{flex-direction:column;gap:10px}
+  .seller-plat{margin-left:0}
+  .seller-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+
+  .modal-bg{padding:0;align-items:flex-end}
+  .modal{border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto}
+  .modal-top{flex-direction:column;padding:14px 16px 10px}
+  .modal-thumb{width:100%;height:200px;border-radius:12px}
+  .modal-pname{font-size:16px}
+  .so-wrap{padding:0 16px 20px}
+  .so-hd{flex-wrap:wrap;gap:6px}
+  .so-prices{margin-left:0;text-align:left}
+  .so-btn-row{flex-wrap:wrap}
+
+  
+  
+
+  footer{padding:18px 14px;font-size:11px}
+}
+
+@media(max-width:380px){
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .hero-title{font-size:20px}
+  .nav-tab{padding:0 8px;font-size:11px}
+}
 
 
 .pcard{border:1px solid #f4c0d1;border-radius:16px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
@@ -58,10 +111,10 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 .pcard-emoji{font-size:44px;position:relative;z-index:1}
 .seller-dots{position:absolute;top:8px;left:8px;display:flex;gap:3px;z-index:2;flex-wrap:wrap;max-width:70%}
 .sdot{font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;color:#fff;line-height:1.4;white-space:nowrap}
-.sdot-xhs{background:#ff2442}
+.sdot-xhs{background:#d4537e}
 .sdot-tao{background:#ff6900}
 .pcard-body{padding:9px 11px 12px}
-.pcard-cat{font-size:10px;color:#b4a2ac;margin-bottom:2px}
+.pcard-cat{font-size:10px;color:#b4a2ac;margin-bottom:2px;}
 .pcard-name{font-size:12px;font-weight:700;color:#4b1528;line-height:1.35;margin-bottom:5px}
 .pcard-price-main{font-size:13px;font-weight:700;color:#d4537e}
 .pcard-price-sub{font-size:10px;color:#b4a2ac;margin-top:1px}
@@ -75,7 +128,7 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 .bg-etc{background:#F0FAF0}
 
 /* SELLER PAGE */
-.seller-page{max-width:1080px;margin:0 auto;padding:28px}
+.seller-page{max-width:1080px;margin:0 auto;padding:28px;background:#fff}
 .sfilter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .sfilter-btn{display:flex;align-items:center;gap:6px;border:1.5px solid #f4c0d1;border-radius:24px;padding:7px 15px;font-size:12px;font-weight:500;background:#fff;color:#993556;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}
 .sfilter-btn.on,.sfilter-btn:hover{background:#fbeaf0;border-color:#d4537e;color:#d4537e;font-weight:700}
@@ -87,23 +140,23 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 .seller-mt{font-size:12px;color:#993556;margin-bottom:6px}
 .seller-desc{font-size:12px;color:#72243e;line-height:1.7;margin-bottom:8px}
 .seller-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
-.stag{background:#fff;border:1px solid #f4c0d1;border-radius:20px;padding:3px 9px;font-size:11px;color:#72243e}
+.stag{background:#fff;border:1px solid #f4c0d1;border-radius:20px;padding:3px 9px;font-size:11px;color:#993556}
 .seller-links{display:flex;gap:7px;flex-wrap:wrap}
 .seller-link-btn{display:inline-flex;align-items:center;gap:4px;color:#fff;border:none;border-radius:18px;padding:7px 14px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;transition:opacity .2s}
 .seller-link-btn:hover{opacity:.85}
-.btn-xhs{background:#ff2442}
+.btn-xhs{background:#d4537e}
 .btn-tao{background:#ff6900}
 .seller-plat{display:flex;gap:5px;flex-shrink:0;flex-wrap:wrap;margin-top:2px}
 .plat-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px}
-.plat-xhs{background:#fff0f3;border:1.5px solid #ff2442;color:#cc1133}
-.plat-tao{background:#fff2e8;border:1.5px solid #ff6900;color:#cc4400}
+.plat-xhs{background:#fbeaf0;border:1.5px solid #d4537e;color:#b8436a}
+.plat-tao{background:#fff4ee;border:1.5px solid #ff6900;color:#cc4400}
 .seller-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 @media(max-width:900px){.seller-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* MODAL */
-.modal-bg{display:none;position:fixed;inset:0;background:rgba(75,21,40,.52);z-index:500;align-items:flex-start;justify-content:center;padding:28px 14px;overflow-y:auto}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(75,21,40,.52);z-index:500;align-items:flex-start;justify-content:center;padding:28px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .modal-bg.open{display:flex;animation:fadeUp .2s ease}
-.modal{background:#fff;border-radius:22px;max-width:720px;width:100%;border:1px solid #f4c0d1}
+.modal{background:#fff;border-radius:22px;max-width:720px;width:100%;border:1px solid #f4c0d1;}
 .modal-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #fbeaf0;border-radius:22px 22px 0 0;position:sticky;top:0;background:#fff;z-index:10}
 .modal-bar-title{font-size:14px;font-weight:700;color:#4b1528}
 .modal-x{background:none;border:1px solid #f4c0d1;border-radius:18px;padding:5px 13px;font-size:12px;color:#993556;cursor:pointer;font-family:inherit;transition:all .2s}
@@ -112,14 +165,14 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 .modal-thumb{width:170px;height:170px;border-radius:14px;flex-shrink:0;border:1px solid #f4c0d1;display:flex;align-items:center;justify-content:center;font-size:64px;overflow:hidden}
 .modal-thumb img{width:100%;height:100%;object-fit:cover}
 .modal-right{flex:1}
-.modal-pname{font-size:18px;font-weight:700;color:#4b1528;line-height:1.3;margin-bottom:6px}
-.modal-desc{font-size:12px;color:#72243e;line-height:1.7;background:#fbeaf0;border-radius:10px;padding:9px 12px;margin-bottom:10px}
+.modal-pname{font-size:18px;font-weight:700;color:#4b1528;line-height:1.3;margin-bottom:6px;}
+.modal-desc{font-size:12px;color:#72243e;line-height:1.7;background:#fbeaf0;border-radius:10px;padding:9px 12px;margin-bottom:10px;border:1px solid #fbeaf0}
 .modal-cats{display:flex;gap:5px;flex-wrap:wrap}
 .modal-cat-tag{background:#fbeaf0;border:1px solid #f4c0d1;border-radius:10px;padding:2px 9px;font-size:11px;color:#993556}
 .so-wrap{padding:0 20px 20px}
 .so-title{font-size:13px;font-weight:700;color:#4b1528;margin-bottom:10px}
 .so-card{border:1px solid #f4c0d1;border-radius:14px;padding:13px 15px;margin-bottom:9px;transition:border-color .2s}
-.so-card:hover{border-color:#ff2442}
+.so-card:hover{border-color:#d4537e}
 .so-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .so-av{width:30px;height:30px;border-radius:50%;background:#fbeaf0;border:1px solid #f4c0d1;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .so-nm{font-size:13px;font-weight:700;color:#4b1528}
@@ -134,21 +187,21 @@ nav{background:#fff;border-bottom:1px solid #f4c0d1;padding:0 28px;display:flex;
 .so-btn:hover{opacity:.85}
 
 /* REPORT */
-.report-area{background:#fbeaf0;border-top:1px solid #f4c0d1;padding:32px 28px}
-.report-inner{max-width:640px;margin:0 auto}
-.report-title{font-size:17px;font-weight:700;color:#4b1528;margin-bottom:5px}
-.report-sub{font-size:13px;color:#993556;line-height:1.6;margin-bottom:18px}
-.clist{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;max-height:300px;overflow-y:auto}
-.citem{background:#fff;border:1px solid #f4c0d1;border-radius:12px;padding:12px 14px}
-.cmeta{font-size:11px;color:#993556;margin-bottom:4px}
-.ctext{font-size:13px;color:#4b1528;line-height:1.6}
-.cform{display:flex;flex-direction:column;gap:9px}
-.cform input,.cform textarea{border:1.5px solid #ed93b1;border-radius:12px;padding:10px 15px;font-size:13px;font-family:inherit;outline:none;background:#fff;color:#4b1528;transition:border-color .2s;resize:none}
+
+
+
+
+
+
+
+
+
+.cform input,.cform textarea{border:1.5px solid #f4c0d1;border-radius:12px;padding:10px 15px;font-size:13px;font-family:inherit;outline:none;background:#fff;color:#4b1528;transition:border-color .2s;resize:none}
 .cform input:focus,.cform textarea:focus{border-color:#d4537e}
-.cform input::placeholder,.cform textarea::placeholder{color:#ed93b1}
-.csubmit{background:#d4537e;color:#fff;border:none;border-radius:24px;padding:11px 26px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;align-self:flex-end;transition:background .2s}
+.cform input::placeholder,.cform textarea::placeholder{color:#b4a2ac}
+
 .csubmit:hover{background:#b8436a}
-footer{background:#4b1528;color:#f4c0d1;text-align:center;padding:22px;font-size:12px}
+footer{background:#4b1528;color:#999;text-align:center;padding:22px;font-size:12px}
 footer strong{color:#fff}
 </style>
 </head>
@@ -162,17 +215,17 @@ footer strong{color:#fff}
       판매자로 보기
       <span id="seller-badge" style="position:absolute;top:10px;right:8px;width:7px;height:7px;background:#d4537e;border-radius:50%;display:block"></span>
     </button>
+
   </div>
 </nav>
 
 <!-- PAGE 1 -->
 <div id="page-items" class="page on">
   <div class="hero">
-    <div class="hero-eye">✦ 주인장 직접 검증</div>
-    <div class="hero-title">크런치 말랑이<br><em>여기서 다 골라요</em></div>
-    <div class="hero-sub">국내에서 비싸게 파는 말랑이, 직구로 절반 값에 사세요</div>
+    <div class="hero-title">말랑이, 더 이상<br><em>비싸게 사지 않는다.</em></div>
+    <div class="hero-sub">직구는 어렵고 말랑이는 비싸니까,<br>주인장이 대신 찾아왔어요.</div>
     <div class="notice-box">
-      <strong>💸 국내 마켓 가격의 절반으로 살 수 있어요</strong><br>
+      <strong> 국내 마켓 가격의 절반으로 살 수 있어요</strong><br>
       • 국내에서 1만원 넘는 말랑이, 샤오홍수 직구하면 <strong>3,000~5,000원</strong>이에요<br>
       • 같은 제품도 판매자마다 파츠 구성·크기·가격이 달라요<br>
       • 가격은 CNY 기준 · <strong>환율 약 227원/위안</strong> 적용 (변동 있을 수 있음)
@@ -198,7 +251,7 @@ footer strong{color:#fff}
 </div>
 
 <!-- PAGE 2 -->
-<div id="page-sellers" class="page">
+<div id="page-sellers" class="page" style="background:#fff">
   <div class="seller-page">
     <div style="font-size:20px;font-weight:700;color:#4b1528;margin-bottom:4px">판매자로 보기</div>
     <div style="font-size:13px;color:#993556;margin-bottom:20px">판매자 선택하면 해당 상품만 보여요</div>
@@ -207,23 +260,7 @@ footer strong{color:#fff}
   </div>
 </div>
 
-<!-- 제보 -->
-<div class="report-area">
-  <div class="report-inner">
-    <div class="report-title">제보하기</div>
-    <div class="report-sub">찾고 싶은 말랑이, 발견한 판매자, 구매 후기 뭐든 남겨주세요.<br>주인장이 직접 확인하고 반영할게요!</div>
-    <div class="clist" id="clist">
-      <div class="citem"><div class="cmeta">익명 · 2일 전</div><div class="ctext">비누크런치 Luca Studio에서 색깔 두 가지 다 있나요? 핑크랑 파랑 둘 다 갖고 싶어요ㅠ</div></div>
-      <div class="citem"><div class="cmeta">익명 · 3일 전</div><div class="ctext">kicarmen 감자크런치 받았는데 진짜 오도독 소리 미쳤어요 강추!</div></div>
-      <div class="citem"><div class="cmeta">익명 · 5일 전</div><div class="ctext">초코파이 크런치 Hello啊圆에서 받았는데 파츠 진짜 가득가득해요 대만족</div></div>
-    </div>
-    <div class="cform">
-      <input type="text" id="c-nick" placeholder="닉네임 (생략 시 익명)">
-      <textarea id="c-body" rows="4" placeholder="제보 내용을 자유롭게 남겨주세요&#10;(판매자 후기, 찾는 제품, 문의 등)"></textarea>
-      <button class="csubmit" onclick="submitC()">제보 남기기</button>
-    </div>
-  </div>
-</div>
+
 
 <footer>
   <strong>말랑pick</strong> — 주인장이 직접 검증한 샤오홍수 말랑이 큐레이션<br>
@@ -235,7 +272,7 @@ footer strong{color:#fff}
   <div class="modal">
     <div class="modal-bar">
       <div class="modal-bar-title" id="m-title"></div>
-      <button class="modal-x" onclick="closeModal()">✕ 닫기</button>
+      <button class="modal-x" onclick="closeModal()"> 닫기</button>
     </div>
     <div class="modal-top">
       <div class="modal-thumb" id="m-thumb"></div>
@@ -325,14 +362,14 @@ const CAT_BG = {
 // ── 판매자 ──
 const SELLERS = {
   luca: {
-    name: "Luca Studio", av: "🍊", plat: ["xhs"],
+    name: "Luca Studio", av: "·", plat: ["xhs"],
     meta: "샤오홍수 · 별점 4.3 · 팔로워 27.5k",
     tags: ["가성비 좋음", "피가 얇기로 유명", "다양한 라인업"],
     desc: "상대적으로 가격이 좋은 편이에요. 피(외피)가 얇기로 유명해서 크런치 소리가 잘 납니다. 주인장 직접 구매 검증!",
     links: [{label:"샤오홍수 바로가기", cls:"btn-xhs", url:"https://www.xiaohongshu.com/shop/666a9c1fd3769300017a0968?instation_link=xhsdiscover%3A%2F%2Fshop_detail%3Fseller_id%3D666a9c1fd3769300017a0968%26general_param%3D%257B%2522source%2522%3A%2522share%2522%257D%26source%3Dshare&page_instance=3957&back_chain_id=shop_homepage_share"}]
   },
   kicarmen: {
-    name: "琪大厨手作球 (kicarmen)", av: "🌸", plat: ["xhs","tao"],
+    name: "琪大厨手作球 (kicarmen)", av: "·", plat: ["xhs","tao"],
     meta: "샤오홍수 · 별점 4.4 · 팔로워 43.2k",
     tags: ["파츠 가득", "핸드메이드 다수", "비누·망고 인기", "국내 마켓 납품처"],
     desc: "파츠가 가득가득 차있고 핸드메이드 제품이 꽤 있어요. 국내에서 판매되는 크런치 말랑이는 주로 여기서 가져온답니다. 비누·망고 말랑이가 특히 인기!",
@@ -342,38 +379,38 @@ const SELLERS = {
     ]
   },
   juju: {
-    name: "juju不上班 (juju는 퇴근 중)", av: "🦄", plat: ["tao"],
+    name: "juju不上班 (juju는 퇴근 중)", av: "·", plat: ["tao"],
     meta: "타오바오 · 별점 4.4 · 팔로워 43.2k",
     tags: ["희귀 모형 전문", "부드러운 점토", "타오바오 품절 주의"],
     desc: "흔하지 않고 특이한 모형의 말랑이가 가장 많은 곳! 점토가 부드러워서 어떤 제품을 사도 평타 이상이에요. 현재 샤오홍수에서 결제가 안 되니 타오바오에서 구매하세요. 재입고 때 빠르게 구매 추천!",
     links: [{label:"타오바오 바로가기", cls:"btn-tao", url:"https://e.tb.cn/h.R7G5gn50lHYByl6?tk=lL5Sg0fVQa4"}]
   },
   sweet: {
-    name: "Sweet Studio手作球", av: "🌹", plat: ["xhs","tao"],
+    name: "Sweet Studio手作球", av: "·", plat: ["xhs","tao"],
     meta: "샤오홍수 · 별점 4.3 · 팔로워 130만",
     tags: ["수제볼 맛집", "파츠 들어간 수제볼", "젓소초코파이 유명", "받는데 시간 걸림"],
-    desc: "젓소 초코파이, 로즈솔트로 유명한 맛집! 💡 파츠가 들어간 수제볼이 많고 디자인이 다양해요. 인기 많아서 배송까지 오래 걸릴 수 있어요. 수제볼 찾는다면 강력 추천!",
+    desc: "젓소 초코파이, 로즈솔트로 유명한 맛집!  파츠가 들어간 수제볼이 많고 디자인이 다양해요. 인기 많아서 배송까지 오래 걸릴 수 있어요. 수제볼 찾는다면 강력 추천!",
     links: [
       {label:"샤오홍수 바로가기", cls:"btn-xhs", url:"https://www.xiaohongshu.com/user/profile/60bb5067000000000100287f?xsec_token=YB4BWzvhaIruEqw546TShpJNH4ACy8J4wM2JHTtXlGNeo=&xsec_source=app_share"},
       {label:"타오바오 바로가기", cls:"btn-tao", url:"https://e.tb.cn/h.RSySJnkNF0P1x52?tk=zOahg0fJTUv"}
     ]
   },
   hello: {
-    name: "^Hello啊圆^", av: "⭕", plat: ["xhs"],
+    name: "^Hello啊圆^", av: "H", plat: ["xhs"],
     meta: "샤오홍수 · 별점 4.6 · 팔로워 130만",
     tags: ["영상 보고 결제 가능", "스테디셀러 다양", "다른 마켓 총집합"],
     desc: "말랑이 후기 영상을 보고 결제할 수 있어서 내 픽을 원한다면 최고! 다양한 스테디셀러 제품이 많고 다른 마켓 제품들도 총집합된 느낌이에요.",
     links: [{label:"샤오홍수 바로가기", cls:"btn-xhs", url:"https://www.xiaohongshu.com/shop/666a9c1fd3769300017a0968?instation_link=xhsdiscover%3A%2F%2Fshop_detail%3Fseller_id%3D666a9c1fd3769300017a0968%26general_param%3D%257B%2522source%2522%3A%2522share%2522%257D%26source%3Dshare&page_instance=3957&back_chain_id=shop_homepage_share"}]
   },
   chiboki: {
-    name: "chiboki", av: "🔵", plat: ["xhs"],
+    name: "chiboki", av: "·", plat: ["xhs"],
     meta: "샤오홍수 · 별점 4.4 · 팔로워 1130만",
     tags: ["투명 베이스 원조", "물감 투명 말랑이", "아사삭 수제볼"],
-    desc: "투명 베이스 슬랑이의 원조 맛집! 💡 투명한 맛이 좋은 물감 투명 말랑이 전문이에요. 팔로워 1100만 넘는 초대형 판매자. 영롱하고 투명한 말랑이 찾는다면 여기로!",
+    desc: "투명 베이스 슬랑이의 원조 맛집!  투명한 맛이 좋은 물감 투명 말랑이 전문이에요. 팔로워 1100만 넘는 초대형 판매자. 영롱하고 투명한 말랑이 찾는다면 여기로!",
     links: [{label:"샤오홍수 바로가기", cls:"btn-xhs", url:"https://www.xiaohongshu.com/shop/666a9c1fd3769300017a0968?instation_link=xhsdiscover%3A%2F%2Fshop_detail%3Fseller_id%3D666a9c1fd3769300017a0968%26general_param%3D%257B%2522source%2522%3A%2522share%2522%257D%26source%3Dshare&page_instance=3957&back_chain_id=shop_homepage_share"}]
   },
   xiaojiu: {
-    name: "小九捏捏store", av: "🐻", plat: ["xhs"],
+    name: "小九捏捏store", av: "·", plat: ["xhs"],
     meta: "샤오홍수 · 별점 4.3 · 팔로워 9.9k",
     tags: ["쿠마 전문", "한국 유명 쿠마 다 있음"],
     desc: "한국에서 유명한 쿠마들은 다 여기 있다! 쿠마 말랑이를 찾는다면 무조건 여기로.",
@@ -383,100 +420,100 @@ const SELLERS = {
 
 // ── 제품 ──
 const PRODUCTS = [
-  {id:0,  name:"망고 크런치 말랑이",       emoji:"🥭", img:"mango",      cat:"크런치",
+  {id:0,  name:"망고 크런치 말랑이",       emoji:"", img:"mango",      cat:"크런치",
     sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"15.66"},{id:"hello",cny:"18.8",note:"크런치랑 일반 점토 나뉘어 판매 — 구매 시 크런치 선택 필수!"}]},
-  {id:1,  name:"레몬 크런치 말랑이",       emoji:"🍋", img:"lemon",         cat:"크런치",
+  {id:1,  name:"레몬 크런치 말랑이",       emoji:"", img:"lemon",         cat:"크런치",
     sellers:[{id:"luca",cny:"13.8"},{id:"kicarmen",cny:"15.66"},{id:"hello",cny:"18.8",note:"크런치랑 일반 점토 나뉘어 판매 — 크런치 선택 필수!"}]},
-  {id:2,  name:"치즈 크런치 말랑이",       emoji:"🧀", img:"cheese",     cat:"크런치",
-    sellers:[{id:"luca",cny:"13.8"},{id:"kicarmen",cny:"9.9",note:"⚠️ 크기가 작고 파츠가 적을 수 있어요. 오도독 소리가 적을 수 있습니다. 핸드메이드예요."}]},
-  {id:3,  name:"딸기 크런치 말랑이",       emoji:"🍓", img:"strawberry_crunch", cat:"크런치",
+  {id:2,  name:"치즈 크런치 말랑이",       emoji:"", img:"cheese",     cat:"크런치",
+    sellers:[{id:"luca",cny:"13.8"},{id:"kicarmen",cny:"9.9",note:" 크기가 작고 파츠가 적을 수 있어요. 오도독 소리가 적을 수 있습니다. 핸드메이드예요."}]},
+  {id:3,  name:"딸기 크런치 말랑이",       emoji:"", img:"strawberry_crunch", cat:"크런치",
     sellers:[{id:"luca",cny:"16.8"},{id:"hello",cny:"16.5"}]},
-  {id:4,  name:"감자 크런치 말랑이",       emoji:"🥔", img:"gamja",         cat:"크런치",
-    sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"6.9",note:"⚠️ 크기가 작고 파츠가 적을 수 있어요. 오도독 소리가 적을 수 있습니다. 핸드메이드예요."}]},
-  {id:5,  name:"푸딩 크런치 말랑이",       emoji:"🍮", img:"pudding",         cat:"크런치",
+  {id:4,  name:"감자 크런치 말랑이",       emoji:"", img:"gamja",         cat:"크런치",
+    sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"6.9",note:" 크기가 작고 파츠가 적을 수 있어요. 오도독 소리가 적을 수 있습니다. 핸드메이드예요."}]},
+  {id:5,  name:"푸딩 크런치 말랑이",       emoji:"", img:"pudding",         cat:"크런치",
     sellers:[{id:"luca",cny:"12.9"},{id:"kicarmen",cny:"15.99"},{id:"hello",cny:"15.99",note:"크런치랑 일반 점토 나뉘어 판매 — 크런치 선택 필수!"}]},
-  {id:6,  name:"튀김빵 크런치 말랑이",     emoji:"🍩", img:"twigim",      cat:"크런치",
+  {id:6,  name:"튀김빵 크런치 말랑이",     emoji:"", img:"twigim",      cat:"크런치",
     sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"14.88"},{id:"hello",cny:"9.9"},{id:"juju",cny:"22.8"}]},
-  {id:7,  name:"비누 크런치 말랑이",       emoji:"🫧", img:"soap",         cat:"크런치",
-    sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"18.8",note:"✨ 다른 비누크런치보다 파츠가 가득! 무광 비누입니다."},{id:"hello",cny:"18.8"}]},
-  {id:8,  name:"초코파이 크런치 말랑이",   emoji:"🍫", img:"choco_pie",         cat:"크런치",
+  {id:7,  name:"비누 크런치 말랑이",       emoji:"", img:"soap",         cat:"크런치",
+    sellers:[{id:"luca",cny:"9.9"},{id:"kicarmen",cny:"18.8",note:" 다른 비누크런치보다 파츠가 가득! 무광 비누입니다."},{id:"hello",cny:"18.8"}]},
+  {id:8,  name:"초코파이 크런치 말랑이",   emoji:"", img:"choco_pie",         cat:"크런치",
     sellers:[{id:"kicarmen",cny:"18.88"},{id:"hello",cny:"18.88"}]},
-  {id:9,  name:"모닝빵 크런치 말랑이",     emoji:"🍞", img:"morning_bread",         cat:"크런치",
+  {id:9,  name:"모닝빵 크런치 말랑이",     emoji:"", img:"morning_bread",         cat:"크런치",
     sellers:[{id:"kicarmen",cny:"15.66"},{id:"hello",cny:"15.55"},{id:"juju",cny:"22.8"}]},
-  {id:10, name:"땅콩 크런치 말랑이",       emoji:"🥜", img:"peanut_crunch",     cat:"크런치",
+  {id:10, name:"땅콩 크런치 말랑이",       emoji:"", img:"peanut_crunch",     cat:"크런치",
     sellers:[{id:"kicarmen",cny:"18.8"},{id:"sweet",cny:"16"},{id:"hello",cny:"18.8"}]},
-  {id:11, name:"돌 크런치 말랑이",         emoji:"🪨", img:"dol",         cat:"크런치",
+  {id:11, name:"돌 크런치 말랑이",         emoji:"", img:"dol",         cat:"크런치",
     sellers:[{id:"kicarmen",cny:"14.88"},{id:"sweet",cny:"15"},{id:"hello",cny:"14.88"}]},
-  {id:12, name:"크루아상 크런치 말랑이",   emoji:"🥐", img:"croissant",         cat:"크런치",
+  {id:12, name:"크루아상 크런치 말랑이",   emoji:"", img:"croissant",         cat:"크런치",
     sellers:[{id:"kicarmen",cny:"16.66"},{id:"hello",cny:"16.66"}]},
-  {id:13, name:"귤 크런치 말랑이",         emoji:"🍊", img:"gyul",         cat:"크런치",
+  {id:13, name:"귤 크런치 말랑이",         emoji:"", img:"gyul",         cat:"크런치",
     sellers:[{id:"kicarmen",cny:"16.66"},{id:"hello",cny:"16.66"}]},
-  {id:14, name:"튀김 크런치 말랑이",       emoji:"🍤", img:"twigim2",         cat:"크런치",
+  {id:14, name:"튀김 크런치 말랑이",       emoji:"", img:"twigim2",         cat:"크런치",
     sellers:[{id:"hello",cny:"18.8"},{id:"kicarmen",cny:"18.88"}]},
-  {id:15, name:"노란 빵 크런치 말랑이",    emoji:"🥖", img:"noran_bread",         cat:"크런치",
+  {id:15, name:"노란 빵 크런치 말랑이",    emoji:"", img:"noran_bread",         cat:"크런치",
     sellers:[{id:"juju",cny:"22.8"}]},
-  {id:16, name:"메론빵 크런치 말랑이",     emoji:"🍈", img:"melon_bread",         cat:"크런치",
+  {id:16, name:"메론빵 크런치 말랑이",     emoji:"", img:"melon_bread",         cat:"크런치",
     sellers:[{id:"juju",cny:"23.8"},{id:"kicarmen",cny:"18.88"}]},
-  {id:17, name:"마늘 크런치 슬랑이",       emoji:"🧄", img:"garlic",         cat:"크런치",
+  {id:17, name:"마늘 크런치 슬랑이",       emoji:"", img:"garlic",         cat:"크런치",
     sellers:[{id:"hello",cny:"14.5"}]},
-  {id:18, name:"자두 크런치 말랑이",       emoji:"🍑", img:"plum",         cat:"크런치",
-    sellers:[{id:"sweet",cny:"18",note:"✨ 자잘자잘한 파츠가 맛있어요. 오독오독한 파츠 좋아하면 강추!"}]},
-  {id:19, name:"미니 감자 크런치 말랑이",  emoji:"🥔", img:"mini_gamja",         cat:"크런치",
+  {id:18, name:"자두 크런치 말랑이",       emoji:"", img:"plum",         cat:"크런치",
+    sellers:[{id:"sweet",cny:"18",note:" 자잘자잘한 파츠가 맛있어요. 오독오독한 파츠 좋아하면 강추!"}]},
+  {id:19, name:"미니 감자 크런치 말랑이",  emoji:"", img:"mini_gamja",         cat:"크런치",
     sellers:[{id:"sweet",cny:"6.6",note:"매우 작은 사이즈! 자잘자잘한 파츠가 매력이에요."}]},
-  {id:20, name:"젓소 초코파이 크런치",     emoji:"🐄", img:"cow_choco",         cat:"크런치",
+  {id:20, name:"젓소 초코파이 크런치",     emoji:"", img:"cow_choco",         cat:"크런치",
     sellers:[{id:"sweet",cny:"18.8"}]},
-  {id:21, name:"투명 치약 말랑이",         emoji:"🪥", img:"trans_toothpaste",         cat:"투명",
-    sellers:[{id:"chiboki",cny:"24.9",note:"✨ 원조 판매자!"},{id:"hello",cny:"24.9"}]},
-  {id:22, name:"투명 청사과 수제볼",       emoji:"🍏", img:"trans_apple",         cat:"투명",
+  {id:21, name:"투명 치약 말랑이",         emoji:"", img:"trans_toothpaste",         cat:"투명",
+    sellers:[{id:"chiboki",cny:"24.9",note:" 원조 판매자!"},{id:"hello",cny:"24.9"}]},
+  {id:22, name:"투명 청사과 수제볼",       emoji:"", img:"trans_apple",         cat:"투명",
     sellers:[{id:"chiboki",cny:"27.9"},{id:"hello",cny:"28.9"}]},
-  {id:23, name:"투명 파랑 치즈 말랑이",    emoji:"💙", img:"trans_cheese",         cat:"투명",
-    sellers:[{id:"chiboki",cny:"29.8",note:"✨ 원조 판매자!"},{id:"hello",cny:"29.8"}]},
-  {id:24, name:"투명 과일 수제볼",         emoji:"🍇", img:"trans_fruit",         cat:"투명",
+  {id:23, name:"투명 파랑 치즈 말랑이",    emoji:"", img:"trans_cheese",         cat:"투명",
+    sellers:[{id:"chiboki",cny:"29.8",note:" 원조 판매자!"},{id:"hello",cny:"29.8"}]},
+  {id:24, name:"투명 과일 수제볼",         emoji:"", img:"trans_fruit",         cat:"투명",
     sellers:[{id:"chiboki",cny:"22.9"}]},
-  {id:25, name:"투명 아사삭 수제볼",       emoji:"🫧", img:"trans_asasak",         cat:"투명",
+  {id:25, name:"투명 아사삭 수제볼",       emoji:"", img:"trans_asasak",         cat:"투명",
     sellers:[{id:"chiboki",cny:"22.9"},{id:"sweet",cny:"16",note:"Sweet Studio 버전은 가격이 더 저렴해요"}]},
-  {id:26, name:"투명 쫀득 수제볼",         emoji:"🔮", img:"trans_chewy",         cat:"투명",
+  {id:26, name:"투명 쫀득 수제볼",         emoji:"", img:"trans_chewy",         cat:"투명",
     sellers:[{id:"chiboki",cny:"10.9"},{id:"sweet",cny:"8.8",note:"크기가 작은 버전이에요"},{id:"kicarmen",cny:"15.88"}]},
-  {id:27, name:"바나나 쿠마 말랑이",       emoji:"🍌", img:"kuma_banana",         cat:"쿠마",
+  {id:27, name:"바나나 쿠마 말랑이",       emoji:"", img:"kuma_banana",         cat:"쿠마",
     sellers:[{id:"xiaojiu",cny:"25.8"}]},
-  {id:28, name:"반짝이 쿠마 말랑이",       emoji:"✨", img:"kuma_glitter",    cat:"쿠마",
+  {id:28, name:"반짝이 쿠마 말랑이",       emoji:"", img:"kuma_glitter",    cat:"쿠마",
     sellers:[{id:"xiaojiu",cny:"26.8"}]},
-  {id:29, name:"무 쿠마 말랑이",           emoji:"🐻", img:"kuma_mu",         cat:"쿠마",
+  {id:29, name:"무 쿠마 말랑이",           emoji:"", img:"kuma_mu",         cat:"쿠마",
     sellers:[{id:"xiaojiu",cny:"26.8",note:"핑크·투명·흰색·초록 4가지 색상"}]},
-  {id:30, name:"파인애플 쿠마 말랑이",     emoji:"🍍", img:"kuma_pineapple",         cat:"쿠마",
+  {id:30, name:"파인애플 쿠마 말랑이",     emoji:"", img:"kuma_pineapple",         cat:"쿠마",
     sellers:[{id:"xiaojiu",cny:"26.8"}]},
-  {id:31, name:"감 쿠마 말랑이",           emoji:"🍊", img:"kuma_gam",         cat:"쿠마",
+  {id:31, name:"감 쿠마 말랑이",           emoji:"", img:"kuma_gam",         cat:"쿠마",
     sellers:[{id:"xiaojiu",cny:"25.8"}]},
-  {id:32, name:"버터 스퀴시",              emoji:"🧈", img:"butter",       cat:"스퀴시",
+  {id:32, name:"버터 스퀴시",              emoji:"", img:"butter",       cat:"스퀴시",
     sellers:[{id:"hello",cny:"14.8"}]},
-  {id:33, name:"배게 말랑이",              emoji:"🛏️", img:"pillow",        cat:"스퀴시",
+  {id:33, name:"배게 말랑이",              emoji:"", img:"pillow",        cat:"스퀴시",
     sellers:[{id:"hello",cny:"21.8"}]},
-  {id:34, name:"대왕 빵 스퀴시",           emoji:"🍞", img:"daewang_bread",         cat:"스퀴시",
-    sellers:[{id:"hello",cny:"16.9",note:"✨ 손만한 크기! 엄청 크고 귀여워요"}]},
-  {id:35, name:"구운 마시멜로 스퀴시",     emoji:"☁️", img:"marshmallow",         cat:"스퀴시",
+  {id:34, name:"대왕 빵 스퀴시",           emoji:"", img:"daewang_bread",         cat:"스퀴시",
+    sellers:[{id:"hello",cny:"16.9",note:" 손만한 크기! 엄청 크고 귀여워요"}]},
+  {id:35, name:"구운 마시멜로 스퀴시",     emoji:"", img:"marshmallow",         cat:"스퀴시",
     sellers:[{id:"hello",cny:"18"}]},
-  {id:36, name:"우유빵 스퀴시",            emoji:"🥛", img:"milk_bread",         cat:"스퀴시",
+  {id:36, name:"우유빵 스퀴시",            emoji:"", img:"milk_bread",         cat:"스퀴시",
     sellers:[{id:"hello",cny:"9.9"}]},
   // 신규 추가
-  {id:38, name:"토마토 크런치 말랑이",  emoji:"🍅", img:"tomato",     cat:"크런치",
+  {id:38, name:"토마토 크런치 말랑이",  emoji:"", img:"tomato",     cat:"크런치",
     sellers:[{id:"sweet",cny:"21.8"}]},
-  {id:39, name:"만터우 크런치 말랑이",  emoji:"🥟", img:"mantou",     cat:"크런치",
+  {id:39, name:"만터우 크런치 말랑이",  emoji:"", img:"mantou",     cat:"크런치",
     sellers:[{id:"sweet",cny:"16"},{id:"hello",cny:"18.8"},{id:"juju",cny:"22.8"}]},
-  {id:40, name:"포뇨 크런치 말랑이",   emoji:"🐟", img:"ponyo",      cat:"크런치",
+  {id:40, name:"포뇨 크런치 말랑이",   emoji:"", img:"ponyo",      cat:"크런치",
     sellers:[{id:"sweet",cny:"22.8"}]},
-  {id:41, name:"핫도그 크런치 말랑이", emoji:"🌭", img:"hotdog",     cat:"크런치",
+  {id:41, name:"핫도그 크런치 말랑이", emoji:"", img:"hotdog",     cat:"크런치",
     sellers:[{id:"sweet",cny:"22.8"}]},
-  {id:42, name:"영롱 글리터 수제볼",   emoji:"✨", img:"glitter_ball",cat:"투명",
-    sellers:[{id:"sweet",cny:"13",note:"✨ 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"},{id:"hello",cny:"22.9",note:"✨ 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"}]},
-  {id:43, name:"초밥 크런치 수제볼",   emoji:"🍣", img:"sushi_ball", cat:"투명",
-    sellers:[{id:"sweet",cny:"18.8",note:"✨ 마켓에서 다양한 수제볼 찾을 수 있어요!"},{id:"hello",cny:"13.8",note:"✨ 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"}]},
-  {id:44, name:"두부 크런치 말랑이",   emoji:"🫙", img:"tofu",       cat:"크런치",
-    sellers:[{id:"kicarmen",cny:"14.88",note:"⚠️ 매우 작은 사이즈예요!"}]},
-  {id:45, name:"옥수수 크런치 말랑이", emoji:"🌽", img:"corn",       cat:"크런치",
+  {id:42, name:"영롱 글리터 수제볼",   emoji:"", img:"glitter_ball",cat:"투명",
+    sellers:[{id:"sweet",cny:"13",note:" 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"},{id:"hello",cny:"22.9",note:" 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"}]},
+  {id:43, name:"초밥 크런치 수제볼",   emoji:"", img:"sushi_ball", cat:"투명",
+    sellers:[{id:"sweet",cny:"18.8",note:" 마켓에서 다양한 수제볼 찾을 수 있어요!"},{id:"hello",cny:"13.8",note:" 마켓에서 다양한 글리터 수제볼 찾을 수 있어요!"}]},
+  {id:44, name:"두부 크런치 말랑이",   emoji:"", img:"tofu",       cat:"크런치",
+    sellers:[{id:"kicarmen",cny:"14.88",note:" 매우 작은 사이즈예요!"}]},
+  {id:45, name:"옥수수 크런치 말랑이", emoji:"", img:"corn",       cat:"크런치",
     sellers:[{id:"kicarmen",cny:"15.99"},{id:"hello",cny:"15.99"}]},
-  {id:46, name:"후르츠 과일 투명 크런치 수제볼", emoji:"🍊", img:"fruits_ball", cat:"투명",
+  {id:46, name:"후르츠 과일 투명 크런치 수제볼", emoji:"", img:"fruits_ball", cat:"투명",
     sellers:[{id:"chiboki",cny:"39.8"},{id:"hello",cny:"39.8"}]},
-  {id:37, name:"아사삭 두 컬러 말랑이",    emoji:"🌈", img:"asasak",         cat:"슬랑이",
+  {id:37, name:"아사삭 두 컬러 말랑이",    emoji:"", img:"asasak",         cat:"슬랑이",
     sellers:[{id:"hello",cny:"13.8",note:"가게마다 이름이 달라요"}]},
 ];
 
@@ -501,7 +538,7 @@ function renderGrid() {
   if(q) list = list.filter(p=>p.name.includes(q)||p.emoji.includes(q));
   const grid = document.getElementById("main-grid");
   if(!list.length) {
-    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:#b4a2ac">검색 결과가 없어요 😢</div>';
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:60px;color:#b4a2ac">검색 결과가 없어요 </div>';
     return;
   }
   grid.innerHTML = list.map(p=>{
@@ -553,7 +590,7 @@ function renderSellerSections(sid) {
     const seller = SELLERS[s];
     const prods = PRODUCTS.filter(p=>p.sellers.some(sv=>sv.id===s));
     const platBadges = seller.plat.map(pl=>
-      pl==="xhs"?'<span class="plat-badge plat-xhs">🔴 샤오홍수</span>':'<span class="plat-badge plat-tao">🟠 타오바오</span>'
+      pl==="xhs"?'<span class="plat-badge plat-xhs"> 샤오홍수</span>':'<span class="plat-badge plat-tao">🟠 타오바오</span>'
     ).join("");
     const linkBtns = seller.links.map(l=>
       `<a class="seller-link-btn ${l.cls}" href="${l.url}" target="_blank">${l.label} →</a>`
@@ -606,10 +643,10 @@ function openModal(id) {
   document.getElementById("m-sellers").innerHTML = p.sellers.map(sv=>{
     const s = SELLERS[sv.id];
     const platBadge = s.plat.includes("xhs")
-      ? '<span class="plat-badge plat-xhs" style="font-size:10px">🔴 샤오홍수</span>'
+      ? '<span class="plat-badge plat-xhs" style="font-size:10px"> 샤오홍수</span>'
       : '<span class="plat-badge plat-tao" style="font-size:10px">🟠 타오바오</span>';
     const noteHtml = sv.note
-      ? `<div class="so-note${sv.note.startsWith('✨')?' info':''}">${sv.note}</div>` : "";
+      ? `<div class="so-note${sv.note.startsWith('')?' info':''}">${sv.note}</div>` : "";
     const linkBtns = s.links.map(l=>
       `<a class="so-btn ${l.cls}" href="${l.url}" target="_blank">${l.label} →</a>`
     ).join("");
@@ -645,21 +682,71 @@ function goPage(name, btn) {
   window.scrollTo(0,0);
 }
 
-function submitC() {
-  const nick = document.getElementById("c-nick").value.trim()||"익명";
-  const body = document.getElementById("c-body").value.trim();
-  if(!body){alert("내용을 입력해주세요!");return;}
-  const el = document.createElement("div");
-  el.className="citem";
-  el.innerHTML=`<div class="cmeta">${nick} · 방금 전</div><div class="ctext">${body}</div>`;
-  document.getElementById("clist").appendChild(el);
-  document.getElementById("c-nick").value="";
-  document.getElementById("c-body").value="";
-  el.scrollIntoView({behavior:"smooth",block:"center"});
-}
 
 renderGrid();
 renderSellerPage();
+// renderSellerFilterHome removed
+function renderSellerFilterHome_unused() {
+  const row = document.getElementById("seller-filter-home");
+  if(!row) return;
+  row.innerHTML = Object.entries(SELLERS).map(([sid, s]) => {
+    const platDot = s.plat.includes("tao")
+      ? '<span style="width:7px;height:7px;border-radius:50%;background:#ff6900;display:inline-block;flex-shrink:0"></span>'
+      : '<span style="width:7px;height:7px;border-radius:50%;background:#ff2442;display:inline-block;flex-shrink:0"></span>';
+    const prodCount = PRODUCTS.filter(p=>p.sellers.some(sv=>sv.id===sid)).length;
+    return `<button onclick="filterHomeSeller('${sid}', this)" style="display:flex;align-items:center;gap:7px;border:1.5px solid #f4c0d1;border-radius:24px;padding:9px 16px;font-size:12px;font-weight:500;background:#fff;color:#993556;cursor:pointer;font-family:inherit;transition:all .2s" onmouseover="this.style.borderColor='#d4537e';this.style.color='#d4537e'" onmouseout="if(!this.classList.contains('on')){this.style.borderColor='#f4c0d1';this.style.color='#993556'}">
+      ${platDot}
+      <span>${s.av} ${s.name}</span>
+      <span style="font-size:10px;color:#b4a2ac">${prodCount}개</span>
+    </button>`;
+  }).join("");
+}
+
+function filterHomeSeller(sid, btn) {
+  document.querySelectorAll("#seller-filter-home button").forEach(b=>{
+    b.classList.remove("on");
+    b.style.borderColor="#f4c0d1";
+    b.style.color="#993556";
+    b.style.background="#fff";
+  });
+  btn.classList.add("on");
+  btn.style.borderColor="#d4537e";
+  btn.style.color="#d4537e";
+  btn.style.background="#fbeaf0";
+
+  const s = SELLERS[sid];
+  const prods = PRODUCTS.filter(p=>p.sellers.some(sv=>sv.id===sid));
+  const grid = document.getElementById("seller-products-grid");
+  grid.innerHTML = prods.map(p=>{
+    const bgCls = CAT_BG[p.cat]||"bg-etc";
+    const hasImg = p.img && IMGS[p.img];
+    const sv = p.sellers.find(sv=>sv.id===sid);
+    return `<div class="pcard" onclick="openModal(${p.id})">
+      <div class="pcard-img ${bgCls}">
+        ${hasImg?`<img src="${IMGS[p.img]}" alt="${p.name}">`:`<span class="pcard-emoji">${p.emoji}</span>`}
+        <div class="seller-dots">${s.plat.includes("xhs")?'<span class="sdot sdot-xhs">小</span>':'<span class="sdot sdot-tao">T</span>'}</div>
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-cat">${p.cat}</div>
+        <div class="pcard-name">${p.name}</div>
+        ${sv?`<div class="pcard-price-main">${fmtKrw(sv.cny)}</div><div class="pcard-price-sub">${fmtCny(sv.cny)}</div>`:""}
+      </div>
+    </div>`;
+  }).join("");
+
+  document.getElementById("seller-products-home").style.display = "block";
+  document.getElementById("seller-products-home").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function closeSeller() {
+  document.getElementById("seller-products-home").style.display = "none";
+  document.querySelectorAll("#seller-filter-home button").forEach(b=>{
+    b.classList.remove("on");
+    b.style.borderColor="#f4c0d1";
+    b.style.color="#993556";
+    b.style.background="#fff";
+  });
+}
 // renderSellerCardsHome removed
 
 function renderSellerCardsHome_unused() {
@@ -668,7 +755,7 @@ function renderSellerCardsHome_unused() {
   wrap.innerHTML = Object.entries(SELLERS).map(([sid,s]) => {
     const platBadges = s.plat.map(pl=>
       pl==="xhs"
-        ? '<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;background:#fff0f3;border:1px solid #ff2442;color:#cc1133">🔴 샤오홍수</span>'
+        ? '<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;background:#fff0f3;border:1px solid #ff2442;color:#cc1133"> 샤오홍수</span>'
         : '<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;background:#fff2e8;border:1px solid #ff6900;color:#cc4400">🟠 타오바오</span>'
     ).join(" ");
     const prodCount = PRODUCTS.filter(p=>p.sellers.some(sv=>sv.id===sid)).length;
